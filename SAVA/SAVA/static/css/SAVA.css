@@ -56,14 +56,18 @@ MAIN HOME PAGE
 nav {
     height: 200px;
     background-color: transparent;
+    box-shadow: none;
 }
 
 .nav-wrapper {
     margin: 0;
+    width: 100%;
 }
 
 .top-logo {
     width: 100%;
+    height: fit-content;
+
     color: #333;
     padding: 0;
     font-weight: 800;
@@ -71,9 +75,84 @@ nav {
     text-transform: uppercase;
     flex-flow: column;
     text-align: left;
+
+
 }
 
-.top-logo P {
+.top-logo div {
     margin: 0;
     padding: 0;
+    width: 100%;
+    text-align: left;
+
+}
+
+/* 
+==================
+CENTER BLOCK STUFF
+==================
+*/
+
+.center-block-wrap {
+    height: 671px;
+    border-top: 2px solid #333;
+    border-bottom: 2px solid #333;
+}
+
+.contact-form-wrap {
+    height: 100%;
+}
+
+.services-wrap {
+    height: 100%;
+    flex-flow: column;
+    padding: 30px;
+    justify-content: space-evenly;
+
+}
+
+.service-cards {
+    height: 30%;
+    width: 100%;
+    cursor: pointer;
+
+
+}
+
+.service-cards:hover {
+    box-shadow:
+        0 2.8px 2.2px rgba(0, 0, 0, 0.07),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.05),
+        0 12.5px 10px rgba(0, 0, 0, 0.042),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.035),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.028),
+        0 100px 80px rgba(0, 0, 0, 0.02);
+}
+
+.service-card-info {
+    height: 100%;
+    width: 85%;
+    background-color: #333;
+    border-left: 2px solid #F7F7F7;
+}
+
+.service-card-info h5 {
+    color: #f7f7f7;
+    margin: 0;
+}
+
+.service-card-price {
+    width: 15%;
+    height: 100%;
+    background-color: #F7F7F7;
+}
+
+.price-text {
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.price-text span {
+    font-weight: 300;
 }
