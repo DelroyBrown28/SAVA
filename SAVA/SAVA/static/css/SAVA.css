@@ -1,0 +1,79 @@
+/* 
+==============
+LITTLE HELPERS
+==============
+*/
+
+.flexed {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.redborder {
+    border: 1px solid red;
+}
+
+.blueborder {
+    border: 1px solid blue;
+}
+
+.yellowborder {
+    border: 1px solid yellow;
+}
+
+body,
+html {
+    background-color: #EDE4DF;
+    color: #333;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #333;
+    opacity: 0.3;
+    transition: 0.3s;
+}
+
+/* 
+==============
+MAIN HOME PAGE
+==============
+*/
+
+.home-page-body {
+    height: 100vh;
+}
+
+.container {
+    padding: 0;
+}
+
+nav {
+    height: 200px;
+    background-color: transparent;
+}
+
+.nav-wrapper {
+    margin: 0;
+}
+
+.top-logo {
+    width: 100%;
+    color: #333;
+    padding: 0;
+    font-weight: 800;
+    font-size: 2rem;
+    text-transform: uppercase;
+    flex-flow: column;
+    text-align: left;
+}
+
+.top-logo P {
+    margin: 0;
+    padding: 0;
+}

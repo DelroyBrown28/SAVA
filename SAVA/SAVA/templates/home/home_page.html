@@ -2,13 +2,24 @@
 {% load wagtailcore_tags wagtailimages_tags %}
 
 
-{% block content %}
-{% image self.top_home_page_image width-1500 as top_homepage_img %}
-<div class="jumbotron" style="background-image: url('{{ top_homepage_img.url }}'); background-size: cover; ">
-    <h1 class="display-4">{{ self.home_page_title}}</h1>
-    <p class="lead">{{ self.home_page_subtitle|richtext }}</p>
-    <hr class="my-4">
+<body class="home-page-body">
+    {% block content %}
 
-    <a class="btn btn-primary btn-lg" href="#" role="button">@todo</a>
-</div>
-{% endblock content %}
+    <div class="container">
+        <nav>
+            <div class="nav-wrapper flexed redborder">
+                <a href="#" class="top-logo redborder">
+                    {{ self.home_page_title }}<br>{{ self.home_page_subtitle|richtext }}
+                </a>
+       
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <!-- <li><a href="#">Sass</a></li>
+                <li><a href="#">Components</a></li>
+                <li><a href="#">JavaScript</a></li> -->
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    {% endblock content %}
+</body>
