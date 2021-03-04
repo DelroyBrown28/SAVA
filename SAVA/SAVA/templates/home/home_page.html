@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+
+{% block content %}
+{% image self.top_home_page_image width-1500 as top_homepage_img %}
+<div class="jumbotron" style="background-image: url('{{ top_homepage_img.url }}'); background-size: cover; ">
+    <h1 class="display-4">{{ self.home_page_title}}</h1>
+    <p class="lead">{{ self.home_page_subtitle|richtext }}</p>
+    <hr class="my-4">
+
+    <a class="btn btn-primary btn-lg" href="#" role="button">@todo</a>
+</div>
+{% endblock content %}
