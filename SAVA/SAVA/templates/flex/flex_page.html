@@ -4,7 +4,17 @@
 
 {% block content %}
 
-{{ self.title }}<br>
-{{ self.subtitle }}
+<div>
+    {{ self.title }}<br>
+    {{ self.subtitle }}
+</div>
+
+
+<!-- @remember: This will only loop through the "FlexPage" class in flex/models.py -->
+{% for flex_block in page.content  %}
+{% include_block flex_block %}
+{% endfor %}
+<!-- @remember: This will only loop through the "FlexPage" class in flex/models.py -->
+
 
 {% endblock content %}
