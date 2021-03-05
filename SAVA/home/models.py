@@ -9,8 +9,6 @@ from streams import blocks
 
 
 class HomePage(Page):
-    """"Main Page Model"""
-
     template = 'home/home_page.html'
     max_count = 1
     home_page_title = models.CharField(max_length=50, blank=True, null=True)

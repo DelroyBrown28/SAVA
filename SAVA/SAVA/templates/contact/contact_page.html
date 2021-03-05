@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load wagtailcore_tags %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <!-- TOP NAVIGATION BAR -->
+    <nav class="flexed">
+        <div class="nav-wrapper flexed">
+            <a href="#" class="top-logo">
+                <img src="{% static 'images/logo.png' %}" alt="SAVA Logo">
+            </a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <!-- <li><a href="#">Contact</a></li>
+                <li><a href="#">Prices</a></li>
+                <li><a href="#">What We Do</a></li> -->
+            </ul>
+        </div>
+    </nav>
+    <!-- CONTACT FORM AND OPTIONS -->
+    <div class="center-block-wrap flexed">
+        <!-- FORM SIDE -->
+        <div class="contact-form-wrap flexed col-md-6">
+        {{ self.intro|richtext }}
+            <form class="contact-form" action="{% pageurl page %}" method="POST">
+                {% csrf_token %}
+                {{ form.as_ul }}
+                <input class="submit-form-button" type="submit">
+            </form>
+        </div>
+        <!-- SERVICES SIDE -->
+        <div class="services-wrap flexed col-md-6">
+            <!-- @remember: This will only loop through the "home_page_panels" in your "HomePage" class in home/models.py -->
+            {% for service_card_block in page.contact_page_panels %}
+            {% include_block service_card_block %}
+            {% endfor %}
+            <!-- @remember: This will only loop through the "home_page_panels" in your "HomePage" class in home/models.py -->
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
