@@ -30,48 +30,21 @@
 
             <!-- SERVICES SIDE -->
             <div class="services-wrap flexed col-md-6">
-                <div class="service-cards flexed">
-                    <div class="service-card-info flexed">
-                        <h5>BASIC</h5>
-                    </div>
-                    <div class="service-card-price flexed">
-                        <h6 class="price-text">
-                            £20.00<br>
-                            <span>p/h</span>
-                        </h6>
-                    </div>
-                </div>
-                <div class="service-cards flexed">
-                    <div class="service-card-info flexed">
-                        <h5>PROFESSIONAL</h5>
-                    </div>
-                    <div class="service-card-price flexed">
-                        <h6 class="price-text">
-                            £20.00<br>
-                            <span>p/h</span>
-                        </h6>
-                    </div>
-                </div>
-                <div class="service-cards flexed">
-                    <div class="service-card-info flexed">
-                        <h5>LIFE</h5>
-                    </div>
-                    <div class="service-card-price flexed">
-                        <h6 class="price-text">
-                            £20.00<br>
-                            <span>p/h</span>
-                        </h6>
-                    </div>
-                </div>
+
+
+                <!-- @remember: This will only loop through the "home_page_panels" in your "HomePage" class in home/models.py -->
+                {% for home_block in page.home_page_panels  %}
+                {% include_block home_block %}
+                {% endfor %}
+                <!-- @remember: This will only loop through the "home_page_panels" in your "HomePage" class in home/models.py -->
+
+
+
+                
             </div>
         </div>
     </div>
 
-    <!-- @remember: This will only loop through the "home_page_panels" in your "HomePage" class in home/models.py -->
-    {% for home_block in page.home_page_panels  %}
-    {% include_block home_block %}
-    {% endfor %}
-    <!-- @remember: This will only loop through the "home_page_panels" in your "HomePage" class in home/models.py -->
 
     {% endblock content %}
 </body>

@@ -1,11 +1,24 @@
 {% load wagtailimages_tags %}
 
 <div class="container service-cards-mainwrap flexed">
-    <h2>{{ self.service_cards_title }}</h2>
     <div class="service-cards-wrap flexed">
         {% for service_card in self.service_cards  %}
-        <div class="card" style="width: 18rem;">
-            {% image service_card.image fill-300x200 as service_card_img %}
+
+       <div class="service-card mt-2 mb-2 flexed">
+           <div class="col-md-9 service-card-description flexed">
+               <h3 class="service-card-type-text">{{ service_card.service_type }}</h3>
+               <p class="service-card-description-text">{{ service_card.service_description }}</p>
+           </div>
+           <div class="col-md-3 service-card-price flexed">
+               <p class="service-card-price-text">£{{ service_card.service_price }}</p>
+           </div>
+
+       </div>
+
+    
+
+
+    <!-- <div class="card" style="width: 18rem;">
             <img src="{{ service_card_img.url }}" class="card-img-top" alt="{{ service_card_img.alt }}">
             <div class="card-body">
                 <h5 class="card-title">{{ service_card.service_type }}</h5>
@@ -19,7 +32,7 @@
                 {% endif %}
 
             </div>
-        </div>
-        {% endfor %}
-    </div>
+        </div> -->
+    {% endfor %}
+</div>
 </div>

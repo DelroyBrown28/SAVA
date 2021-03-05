@@ -2,6 +2,8 @@
 # Blocks connect to the streams templates
 # Each block/class below must be added to flex/models.py
 from wagtail.core import blocks
+from wagtail.core.blocks import DecimalBlock
+
 from wagtail.images.blocks import ImageChooserBlock
 
 
@@ -27,6 +29,7 @@ class CardBlock(blocks.StructBlock):
                 ('service_type', blocks.CharBlock(required=True, max_length=50)),
                 ('service_description', blocks.TextBlock(
                     required=True, max_length=250)),
+                ('service_price', blocks.DecimalBlock(required=True, decimal_places=2)),
                 ('button_to_internal_page', blocks.PageChooserBlock(
                     required=False, help_text="Button to a page on your site")),
                 ('button_to_url', blocks.URLBlock(required=False,
