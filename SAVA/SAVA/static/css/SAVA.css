@@ -156,3 +156,16 @@ CENTER BLOCK STUFF
 .price-text span {
     font-weight: 300;
 }
+
+.service-cards-mainwrap {
+    flex-flow: column;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+.service-cards-wrap {
+    justify-content: space-evenly;
+    width: 100%;
+
+}

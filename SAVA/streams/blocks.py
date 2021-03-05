@@ -1,5 +1,8 @@
-# @remember: Blocks connect to the streams templates
+# @remember:
+# Blocks connect to the streams templates
+# Each block/class below must be added to flex/models.py
 from wagtail.core import blocks
+from wagtail.images.blocks import ImageChooserBlock
 
 
 class TitleAndTextBlock(blocks.StructBlock):
@@ -10,6 +13,32 @@ class TitleAndTextBlock(blocks.StructBlock):
         template = 'streams/title_and_text_block.html'
         icon = 'edit'
         label = 'Title & Text'
+
+
+class CardBlock(blocks.StructBlock):
+
+    service_cards_title = blocks.CharBlock(
+        required=True, help_text="Add Your Title")
+
+    service_cards = blocks.ListBlock(
+        blocks.StructBlock(
+            [
+                ('image', ImageChooserBlock(required=True)),
+                ('service_type', blocks.CharBlock(required=True, max_length=50)),
+                ('service_description', blocks.TextBlock(
+                    required=True, max_length=250)),
+                ('button_to_internal_page', blocks.PageChooserBlock(
+                    required=False, help_text="Button to a page on your site")),
+                ('button_to_url', blocks.URLBlock(required=False,
+                                                  help_text='Button to any website using the URL link')),
+            ]
+        )
+    )
+
+    class Meta:
+        template = 'streams/card_block.html'
+        icon = 'image'
+        label = 'Service Cards'
 
 
 class RichTextBlock(blocks.RichTextBlock):

@@ -21,6 +21,7 @@ class FlexPage(Page):
             ('title_and_text', blocks.TitleAndTextBlock()),
             ('full_richtext', blocks.RichTextBlock()),
             ('simple_richtext', blocks.SimpleRichTextBlock()),
+            ('service_cards', blocks.CardBlock()),
 
         ],
         null=True,
@@ -37,3 +38,30 @@ class FlexPage(Page):
     class Meta:
         verbose_name = 'Flex Page'
         verbose_name_plural = 'Flex Pages'
+
+
+class HomeFlexPage(Page):
+    template = 'home/home_page.html'
+
+    content = StreamField(
+        [
+            ('title_and_text', blocks.TitleAndTextBlock()),
+            ('full_richtext', blocks.RichTextBlock()),
+            ('simple_richtext', blocks.SimpleRichTextBlock()),
+            ('service_cards', blocks.CardBlock()),
+
+        ],
+        null=True,
+        blank=True
+    )
+
+    subtitle = models.CharField(max_length=150, null=True, blank=True)
+
+    content_panels = Page.content_panels + [
+        FieldPanel('subtitle'),
+        StreamFieldPanel('content'),
+    ]
+
+    class Meta:
+        verbose_name = 'Flexed Home Page'
+        verbose_name_plural = 'Flexed Home Pages'
