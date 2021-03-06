@@ -25,10 +25,14 @@ class CardBlock(blocks.StructBlock):
     service_cards = blocks.ListBlock(
         blocks.StructBlock(
             [
-                ('image', ImageChooserBlock(required=True)),
+                ('image', ImageChooserBlock(required=False)),
+                ('icon_image', ImageChooserBlock(required=True)),
                 ('service_type', blocks.CharBlock(required=True, max_length=50)),
                 ('service_description', blocks.TextBlock(
-                    required=True, max_length=250)),
+                    required=True, max_length=121)),
+                ('service_offering_1', blocks.CharBlock(required=True, max_length=50)),
+                ('service_offering_2', blocks.CharBlock(required=True, max_length=50)),
+                ('service_offering_3', blocks.CharBlock(required=True, max_length=50)),
                 ('service_price', blocks.DecimalBlock(required=True, decimal_places=2)),
                 ('button_to_internal_page', blocks.PageChooserBlock(
                     required=False, help_text="Button to a page on your site")),

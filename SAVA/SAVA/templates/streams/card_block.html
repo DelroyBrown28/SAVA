@@ -1,24 +1,44 @@
 {% load wagtailimages_tags %}
+{% load static %}
 
 <div class="container service-cards-mainwrap flexed">
     <div class="service-cards-wrap flexed">
         {% for service_card in self.service_cards  %}
 
-       <div class="service-card mt-2 mb-2 flexed">
-           <div class="col-md-9 service-card-description flexed">
-               <h3 class="service-card-type-text">{{ service_card.service_type }}</h3>
-               <p class="service-card-description-text">{{ service_card.service_description }}</p>
-           </div>
-           <div class="col-md-3 service-card-price flexed">
-               <p class="service-card-price-text">£{{ service_card.service_price }}</p>
-           </div>
+        {% image service_card.image width-1500 as service_card_img %}
+        <div class="service-card mt-2 mb-2 flexed">
+            <div class="top-card-title-wrap flexed">
+                <h3 class="service-card-type-text">{{ service_card.service_type }}</h3>
+                {% image service_card.icon_image width-24 as icon_card_img %}
+                <img class="service-card-icons" src="{{ icon_card_img.url }}" alt="{{ icon_card_img.alt }}">
+            </div>
+            <div class="service-card-price-wrap flexed">
+                <p class="service-card-price-text">£{{ service_card.service_price }}</p>
+            </div>
+            <div class="service-card-description flexed"
+                style="background-image: url('{{ service_card_img.url }}');">
+                <p class="service-card-description-text">{{ service_card.service_description }}</p>
+            </div>
+            <ul class="service-offers-wrap flexed">
+                <li class="service-offer-text flexed"><span class="black-dots" style="font-size: 2.2rem;">•</span> {{ service_card.service_offering_1 }}</li>
+                <li class="service-offer-text flexed"><span class="black-dots" style="font-size: 2.2rem;">•</span> {{ service_card.service_offering_2 }}</li>
+                <li class="service-offer-text flexed"><span class="black-dots" style="font-size: 2.2rem;">•</span> {{ service_card.service_offering_3 }}</li>
+            </ul>
+            <div class="service-card-btn-wrap flexed">
+                {% if service_card.button_to_internal_page %}
+                <a class="select-service-btn flexed">Get In Touch</a>
+                {% elif service_card.button_to_url %}
+                <a class="select-service-btn flexed">Get In Touch</a>
+                {% endif %}
+            </div>
 
-       </div>
 
-    
+        </div>
 
 
-    <!-- <div class="card" style="width: 18rem;">
+
+
+        <!-- <div class="card" style="width: 18rem;">
             <img src="{{ service_card_img.url }}" class="card-img-top" alt="{{ service_card_img.alt }}">
             <div class="card-body">
                 <h5 class="card-title">{{ service_card.service_type }}</h5>
@@ -33,6 +53,6 @@
 
             </div>
         </div> -->
-    {% endfor %}
-</div>
+        {% endfor %}
+    </div>
 </div>
