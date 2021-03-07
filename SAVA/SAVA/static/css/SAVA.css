@@ -26,6 +26,8 @@ body,
 html {
     background-color: #EDE4DF;
     color: #333;
+    scroll-behavior: smooth;
+    visibility: auto;
     font-family: 'Roboto Condensed', sans-serif;
 }
 
@@ -110,13 +112,14 @@ CENTER BLOCK STUFF
 
 }
 
+.form-section {
+    height: 100vh;
+}
+
 .contact-form-wrap {
-    position: absolute;
-    height: 100%;
+    height: fit-content;
     padding: 15px;
     flex-flow: column;
-
-    visibility: hidden;
 
 }
 
@@ -125,22 +128,6 @@ CENTER BLOCK STUFF
     width: 50%;
     /* transform: translateY(200%); */
 
-}
-
-.contact-form-wrap li {
-
-    visibility: hidden;
-}
-
-.form-close-btn {
-    position: absolute;
-    left: 25px;
-    top: 25px;
-    width: 45px;
-    height: 45px;
-    font-size: 5rem;
-    z-index: 200;
-    cursor: pointer;
 }
 
 .form-blurb {
@@ -305,4 +292,33 @@ CENTER BLOCK STUFF
 
 .black-dots {
     margin-right: 10px;
+}
+
+/* 
+========================
+THANK YOU PAGE/FORM SENT
+========================
+*/
+
+.thank-you-container {
+    height: 100vh;
+    flex-flow: column;
+}
+
+.thank-you-page-title {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.thank-you-page-text {
+    font-size: 30rem;
+}
+
+.thank-you-page-back-btn {
+    width: 250px;
+    height: 45px;
+    font-size: 2rem;
+    background-color: #333;
+    color: #F7F7F7;
+    
 }

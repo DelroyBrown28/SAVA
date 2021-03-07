@@ -28,21 +28,21 @@
             {% endfor %}
             <!-- @remember: This will only loop through the "home_page_panels" in your "HomePage" class in home/models.py -->
         </div>
-
-        <!-- FORM SIDE -->
-        <div class="contact-form-wrap flexed col-md-12">
-            <div class="form-close-btn flexed" data-toggle="tooltip" data-placement="bottom" title="CLOSE">◦</div>
-            <div class="form-blurb-wrap flexed">
-                {{ self.intro|richtext }}
-            </div>
-            <form class="contact-form" action="{% pageurl page %}" method="POST">
-                {% csrf_token %}
-                {{ form.as_ul }}
-                <input class="submit-form-button" type="submit">
-            </form>
-        </div>
-
     </div>
+
+    <section id="contactForm" class="form-section flexed">
+        <!-- FORM SIDE -->
+    <div class="contact-form-wrap flexed col-md-12">
+        <div class="form-blurb-wrap flexed">
+            {{ self.intro|richtext }}
+        </div>
+        <form class="contact-form" action="{% pageurl page %}" method="POST">
+            {% csrf_token %}
+            {{ form.as_ul }}
+            <input class="submit-form-button" type="submit">
+        </form>
+    </div>
+    </section>
 </div>
 
 

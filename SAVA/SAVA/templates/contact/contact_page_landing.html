@@ -2,10 +2,9 @@
 {% load wagtailcore_tags %}
 
 {% block content %}
-<h3>{{ page.title }}</h3>
-<p>
-    {{ self.thank_you_text|richtext }}
-</p>
-
-
+<div class="container flexed thank-you-container">
+    <h3 class="thank-you-page-title">{{ self.thank_you_title|richtext }}</h3>
+    <p class="thank-you-page-text">{{ self.thank_you_text|richtext }}</p>
+    <a class="thank-you-page-back-btn flexed" href="/contact-page/">⟵</a>
+</div>
 {% endblock content %}
