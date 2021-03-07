@@ -42,11 +42,8 @@ class ContactPage(AbstractEmailForm):
         FieldPanel('intro'),
         InlinePanel('form_fields', label='Form Fields'),
         MultiFieldPanel([
-
             FieldPanel('thank_you_title'),
             FieldPanel('thank_you_text'),
-
-
         ], heading='Thank You Page Text'),
         MultiFieldPanel([
             FieldRowPanel([
